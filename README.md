@@ -44,11 +44,47 @@ Ver decisiones en [`docs/adr/`](docs/adr/).
 
 ---
 
-## 🎨 Prototipo Figma
+## 🎨 Prototipo Navegable & Design System
 
-🔗 [Ver prototipo navegable en Figma](https://www.figma.com/proto/placeholder-link)
+🔗 **[Ver prototipo navegable →](https://gaoacorp.github.io/Ordonez-post1-u12_apps/)**
 
-> El prototipo incluye 5 pantallas del flujo principal con Design System (paleta de colores, tipografía, componentes reutilizables).
+Prototipo interactivo con **5 pantallas del flujo principal** + **Design System completo**. Los tokens de color y tipografía coinciden 1:1 con el theme de Jetpack Compose definido en `core/ui/src/main/java/com/gaaocorp/taskflow/ui/theme/`.
+
+### Vista general del prototipo
+
+![Prototipo TaskFlow](docs/screenshots/figma-prototype.png)
+
+### Las 5 pantallas del flujo principal
+
+![5 Pantallas del flujo](docs/screenshots/figma-5-screens.png)
+
+| # | Pantalla | Descripción | Componentes usados |
+|---|----------|-------------|---------------------|
+| 1 | **Lista de Tareas** | Pantalla principal con tareas del usuario | `TopAppBar`, `LazyColumn`, `Card`, `Chip`, `FAB` |
+| 2 | **Crear Tarea** | Formulario con prioridad | `TextField`, `FilterChip`, `Button` |
+| 3 | **Detalle de Tarea** | Vista completa con acciones | `Card`, `Button`, `IconButton` |
+| 4 | **Perfil** | Datos del usuario y configuración | `Surface`, `Card`, `Avatar` |
+| 5 | **Empty State** | Onboarding sin tareas | `Button`, callout informativo |
+
+### Design System Mínimo
+
+El prototipo incluye una página dedicada al Design System con todos los tokens y componentes:
+
+#### 🎨 Paleta de colores + Tipografía
+![Design System - Colores y Tipografía](docs/screenshots/design-system-colors.png)
+
+#### 🧩 Componentes con sus 4 estados (default, focused, error, disabled)
+![Design System - Componentes](docs/screenshots/design-system-components.png)
+
+**Tokens de color** sincronizados con `core/ui/.../theme/Color.kt`:
+- `primary` `#1E6FDB` · `on-primary` `#FFFFFF`
+- `secondary` `#03DAC6` · `background` `#F5F7FA`
+- `surface` `#FFFFFF` · `error` `#B3261E`
+- `priority-high` `#EF4444` · `priority-medium` `#F59E0B` · `priority-low` `#10B981`
+
+**Escala tipográfica Material 3:** Headline (Large/Medium/Small), Title (Large/Medium/Small), Body (Large/Medium/Small), Label (Large/Medium/Small).
+
+**Componentes reutilizables:** `Button`, `TextField`, `Card`, `TopAppBar` — cada uno implementado en `core/ui/src/main/java/com/gaaocorp/taskflow/ui/components/Components.kt` con sus 4 estados.
 
 ---
 
@@ -90,18 +126,25 @@ cd Ordonez-post1-u12_apps
 Ordonez-post1-u12_apps/
 ├── .github/
 │   ├── workflows/
-│   │   └── ci.yml
+│   │   ├── ci.yml                  ← pipeline CI (Post 2)
+│   │   └── deploy-pages.yml        ← deploy del prototipo a GitHub Pages
 │   └── PULL_REQUEST_TEMPLATE.md
 ├── docs/
 │   ├── adr/
 │   │   ├── ADR-001-stack-tecnologico.md
 │   │   ├── ADR-002-arquitectura-modulos.md
 │   │   └── ADR-003-persistencia-sincronizacion.md
+│   ├── screenshots/                ← capturas del prototipo y Design System
 │   └── architecture-diagram.png
-├── app/
-├── feature/
-├── core/
+├── prototype/                      ← prototipo HTML navegable (deploya a GitHub Pages)
+│   ├── index.html
+│   ├── design-system.html
+│   ├── screen-1-list.html ... screen-5-empty.html
+│   └── styles.css
+├── app/                            ← módulo :app
+├── feature/                        ← módulos :feature:tasks, :feature:profile
+├── core/                           ← módulos :core:domain, :core:data, :core:ui
 ├── gradle/
-│   └── libs.versions.toml
+│   └── libs.versions.toml          ← version catalog
 └── README.md
 ```

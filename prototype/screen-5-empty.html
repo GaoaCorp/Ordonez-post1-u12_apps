@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><title>5. Empty State — TaskFlow</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<a href="index.html" class="nav-back" id="navback">← Volver al prototipo</a>
+<script>
+  // Ocultar nav-back si está renderizado en iframe (preview en index)
+  if (window.self !== window.top) document.getElementById('navback').style.display = 'none';
+</script>
+<div class="phone-frame">
+  <div class="status-bar"><span>9:41</span><span>●●●●</span></div>
+  <div class="top-app-bar">
+    <div class="title">Mis Tareas</div>
+    <a href="screen-4-profile.html" class="icon-right">👤</a>
+  </div>
+  <div class="screen-content" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:32px">
+    
+    <div style="font-size:80px;margin-bottom:16px">📋</div>
+    
+    <div style="font-size:22px;font-weight:600;color:#1A1C1E;margin-bottom:8px">
+      No tienes tareas aún
+    </div>
+    
+    <div style="font-size:14px;color:#79747E;line-height:1.5;margin-bottom:32px;max-width:240px">
+      Crea tu primera tarea para comenzar a organizar tu día
+    </div>
+    
+    <a href="screen-2-create.html" style="text-decoration:none;width:100%">
+      <button class="btn-primary">+ Crear primera tarea</button>
+    </a>
+
+    <div style="margin-top:48px;padding:16px;background:#E3F2FD;border-radius:8px;width:100%">
+      <div style="font-size:13px;color:#1E6FDB;font-weight:500;margin-bottom:4px">💡 Tip</div>
+      <div style="font-size:12px;color:#1A1C1E;line-height:1.5">
+        Las tareas se guardan en tu dispositivo y se sincronizan automáticamente cuando hay conexión.
+      </div>
+    </div>
+    
+  </div>
+  <a href="screen-2-create.html" class="fab">+</a>
+</div>
+</body></html>

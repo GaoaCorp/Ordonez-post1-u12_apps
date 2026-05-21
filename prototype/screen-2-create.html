@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><title>2. Crear Tarea — TaskFlow</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<a href="index.html" class="nav-back" id="navback">← Volver al prototipo</a>
+<script>if(window.self!==window.top)document.getElementById("navback").style.display="none";</script>
+<div class="phone-frame">
+  <div class="status-bar"><span>9:41</span><span>●●●●</span></div>
+  <div class="top-app-bar">
+    <a href="screen-1-list.html" class="icon-btn">←</a>
+    <div class="title">Nueva Tarea</div>
+  </div>
+  <div class="screen-content">
+    
+    <label class="field-label">TÍTULO *</label>
+    <input class="text-field" type="text" placeholder="Ej: Comprar materiales" value="Documentar ADR-004">
+    
+    <label class="field-label">DESCRIPCIÓN</label>
+    <textarea class="text-field" rows="4" style="resize:none;font-family:inherit">Decisión sobre Compose Navigation vs Voyager para el proyecto integrador.</textarea>
+    
+    <label class="field-label" style="margin-top:8px">PRIORIDAD</label>
+    <div class="chip-row">
+      <div class="chip">Baja</div>
+      <div class="chip selected">Media</div>
+      <div class="chip">Alta</div>
+    </div>
+    
+    <a href="screen-1-list.html" style="text-decoration:none"><button class="btn-primary">Crear Tarea</button></a>
+    <a href="screen-1-list.html" style="text-decoration:none"><button class="btn-outlined">Cancelar</button></a>
+    
+  </div>
+</div>
+</body></html>
